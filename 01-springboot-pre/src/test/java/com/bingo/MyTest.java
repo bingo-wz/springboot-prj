@@ -32,4 +32,11 @@ public class MyTest {
         Student student = (Student) ctx.getBean("LisiStudent");
         System.out.println("容器中的对象：" + student);
     }
+
+    @Test
+    public void test04(){
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        Student student = (Student) ctx.getBean("myStudent");
+        System.out.println("容器中的对象：" + student);
+    }
 }
