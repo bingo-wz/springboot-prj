@@ -1,12 +1,12 @@
 package com.bingo.config;
 
 import com.bingo.vo.Student;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.*;
 
 @ImportResource(value = "classpath:beans.xml")
 @Configuration
+@PropertySource("classpath:tiger.properties")
+@ComponentScan("com.bingo.vo")
 public class SpringConfig {
 
     @Bean

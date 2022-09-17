@@ -2,6 +2,7 @@ package com.bingo;
 
 import com.bingo.config.SpringConfig;
 import com.bingo.vo.Student;
+import com.bingo.vo.Tiger;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -38,5 +39,12 @@ public class MyTest {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
         Student student = (Student) ctx.getBean("myStudent");
         System.out.println("容器中的对象：" + student);
+    }
+
+    @Test
+    public void test05(){
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        Tiger tiger = (Tiger) ctx.getBean("tiger");
+        System.out.println("容器中的对象：" + tiger);
     }
 }
