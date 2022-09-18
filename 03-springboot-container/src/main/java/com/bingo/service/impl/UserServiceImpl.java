@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public void sayHello(String name) {
-        System.out.println("执行了业务方法的sayHello:"+name);
+    public String sayHello(String name) {
+        return "你好："+name;
     }
 }
