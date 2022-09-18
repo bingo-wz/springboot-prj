@@ -11,7 +11,7 @@ public class HelloSpringBoot {
     @RequestMapping("/hello")
     @ResponseBody
     public String helloSpringBoot(){
-        return "欢迎使用spring boot框架";
+        return "欢迎使用spring boot框架,设置了端口";
     }
 
 }
