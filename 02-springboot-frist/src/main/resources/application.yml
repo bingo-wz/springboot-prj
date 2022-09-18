@@ -1,7 +1,16 @@
-#spring:
-#  profiles:
-#    active: dev
-#
 spring:
   profiles:
     active: dev
+#
+#server:
+#  port: 8081
+#  servlet:
+#    context-path: /mydev
+
+#自定义key：value
+school:
+  name: 家里蹲
+  website: www.bingo.com
+  address: 深圳龙岗区
+
+site: www.baidu.com
