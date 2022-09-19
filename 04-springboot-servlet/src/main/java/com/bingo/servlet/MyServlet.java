@@ -15,7 +15,7 @@ public class MyServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=utf-8");
+        resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         out.print("执行了MyServlet");
         out.flush();

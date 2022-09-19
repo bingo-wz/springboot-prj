@@ -6,6 +6,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.servlet.http.HttpServlet;
 
@@ -22,9 +23,19 @@ public class WebApplicationConfig {
     }
 
     @Bean
-    public FilterRegistrationBean filterRegistrationBean(){
+    public FilterRegistrationBean filterRegistrationBean1(){
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new MyFilter());
         filterRegistrationBean.addUrlPatterns("/user/*");
+        return filterRegistrationBean;
+    }
+
+    @Bean
+    public FilterRegistrationBean filterRegistrationBean(){
+        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+        characterEncodingFilter.setEncoding("UTF-8");
+        characterEncodingFilter.setForceEncoding(true);
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(characterEncodingFilter);
+        filterRegistrationBean.addUrlPatterns("/*");
         return filterRegistrationBean;
     }
 }
