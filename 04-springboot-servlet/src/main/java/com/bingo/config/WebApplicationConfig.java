@@ -12,6 +12,10 @@ public class WebApplicationConfig {
 
     @Bean
     public ServletRegistrationBean servletRegistrationBean(){
-        return new ServletRegistrationBean(new MyServlet(),"/servlet");
+//        return new ServletRegistrationBean(new MyServlet(),"/servlet");
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean();
+        servletRegistrationBean.setServlet(new MyServlet());
+        servletRegistrationBean.addUrlMappings("/servlet");
+        return servletRegistrationBean;
     }
 }
