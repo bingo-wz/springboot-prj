@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Param;
 
 import javax.annotation.Resource;
 
-@Mapper
 public interface StudentDao {
 
     Student selectById(@Param("stuId") Integer id);
