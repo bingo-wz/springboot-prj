@@ -6,8 +6,26 @@
 <mapper namespace="com.bingo.dao.StudentDao">
 
     <!--Student selectStudentById(@Param("stuId") Integer id);-->
-    <select id="selectById" resultType="com.bingo.model.Student">
+    <select id="queryById" resultType="com.bingo.model.Student">
         select * from student where id=#{stuId}
     </select>
 
+<!--    List<Student> queryAllStudent();-->
+    <select id="queryAllStudent" resultType="com.bingo.model.Student">
+        select * from student
+    </select>
+
+    <!-- void addStudent(Student student);-->
+    <insert id="addStudent" parameterType="com.bingo.model.Student">
+        insert into student (name, age)
+        values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+    </insert>
+
+    <!--void updateStudent(Student student);-->
+    <update id="updateStudent" parameterType="com.bingo.model.Student">
+        update student
+        set name = #{name,jdbcType=VARCHAR},
+            age = #{age}
+        where id = #{id}
+    </update>
 </mapper>

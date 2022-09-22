@@ -6,6 +6,7 @@ import com.bingo.dao.StudentDao;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -15,7 +16,21 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student queryById(Integer id) {
-        Student student = studentDao.queryById(id);
-        return student;
+        return studentDao.queryById(id);
+    }
+
+    @Override
+    public List<Student> queryAllStudent() {
+        return studentDao.queryAllStudent();
+    }
+
+    @Override
+    public void addStudent(Student student) {
+        studentDao.addStudent(student);
+    }
+
+    @Override
+    public void updateStudent(Student student) {
+        studentDao.updateStudent(student);
     }
 }
